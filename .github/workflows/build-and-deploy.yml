@@ -21,13 +21,13 @@ jobs:
 
     - name: Build app container
       run: |
-        docker build -t ghcr.io/billare/guestbook:latest ./backend
+        docker build -f backend/Containerfile -t ghcr.io/billare/guestbook:latest ./backend
         
 
    
     - name: Build redis container
       run: |
-        docker build -t ghcr.io/billare/redis:latest ./redis
+        docker build -f redis/Containerfile -t ghcr.io/billare/redis:latest ./frontend
         
 
     - name: Push containers
