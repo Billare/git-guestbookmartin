@@ -46,10 +46,10 @@ jobs:
     - name: Login to OpenShift
       run: oc login ${{ secrets.OC_SERVER }} --token=${{ secrets.OC_TOKEN }} --insecure-skip-tls-verify
 
+    - name: Deploy on OpenShift
+      run: |
+        oc project ${{ secrets.OC_NAMESPACE }}
+        oc apply -f git-guestbookmartin/openshift/
 
       
-   - name: Deploy on OpenShift
-     run: |
-    oc project ${{ secrets.OC_NAMESPACE }}
-    oc apply -f git-guestbookmartin/openshift/
-        
+  
