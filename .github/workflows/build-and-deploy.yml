@@ -48,8 +48,8 @@ jobs:
 
 
       
-    - name: Deploy on OpenShift
-      run: |
-        oc project ${{secrets.OC_NAMESPACE }}
-        oc apply -f openshift/
+   - name: Deploy on OpenShift
+     run: |
+    oc project ${{ secrets.OC_NAMESPACE }}
+    oc apply -f git-guestbookmartin/openshift/
         
